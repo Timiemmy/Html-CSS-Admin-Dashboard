@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    box-sizing: border-box;
+    background-color: azure;
+    color: rgba(226, 225, 224, 0.705);
+}
+
+.material-icons-outlined{
+    vertical-align: middle;
+    line-height: 1px;
+}
+
+.text-primary{
+    color: #666666;
+}
+
+.text-blue{
+    color: #246dec;
+}
+
+.text-red{
+    color: #cc3c43;
+}
+
+.text-green{
+    color: #367952;
+}
+
+.text-orange{
+    color: #f5b74f;
+}
+
+.font-weight-bold{
+    font-weight: 600;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr ; /* Used to specify how many columns the grid should have*/
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 
+        "sidebar header header header"
+        "sidebar main main main";/* This alow us to describe what the layout will looklike*/
+
+    height: 100vh;
+}
+
+/*------------HEADER---------------*/
+
+.header{
+    grid-area: header;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.menu-icon{
+    display: none;
+}
+
+/*------------SIDEBAR---------------*/
+
+#sidebar{
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #1f1e1e;
+    overflow-y: auto; /* This is useful to resize an element when a user resize the size*/
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+
+}
+
+.sidebar-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+    color: azure;
+}
+
+.sidebar-title > span {
+    display: none;
+
+}
+
+.sidebar-brand{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sidebar-list{
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+.sidebar-list-item{
+    padding: 20px 20px 20px 20px;
+}
+
+.sidebar-list-item:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.sidebar-responsive{
+    display: inline !important;
+    position: absolute;
+}
+
+/*------------MAIN CONTENT---------------*/
+
+.main-container{
+    grid-area: main;
+    background-color: beige;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: rgb(22, 22, 22);
+}
+
+.main-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-title > p{
+    font-size: 20px;
+}
+
+.main-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0, 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.cards:first-child{
+    border-left: 7px solid #246dec;
+}
+
+.cards:nth-child(2){
+    border-left: 7px solid #f5b74f;
+}
+
+.cards:nth-child(3){
+    border-left: 7px solid #367952;
+}
+
+.cards:nth-child(4){
+    border-left: 7px solid #cc3c43;
+}
+
+.cards > span{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-inner > p{
+    font-size: 18px;
+}
+
+.card-inner > span {
+    font-size: 35px;
+}
+
+.charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.charts-card{
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.charts-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* ----------- Media Queries-----------*/
+/* Media screen of <=993 */
+@media screen and (max-width: 993px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas: "header" "main";
+    }
+
+    #sidebar{
+        display: none;
+    }
+    
+    .menu-icon{
+        display: inline;
+    }
+
+    .sidebar-title > span{
+        display: inline;
+    }
+}
+
+/* media screen of <= 768*/
+@media screen and (max-width: 768px) {
+    .main-cards{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+
+    .charts{
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+
+/*media query of <=576*/
+@media screen and (max-width: 576px) {
+    .header-left{
+        display: none;
+    }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!------------Material Icon link-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+
+
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Header section -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+        <!-- End header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand"><span class="material-icons-outlined">inventory</span>
+                    Faith's Inventory
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item"><span class="material-icons-outlined">dashboard</span>   Dashboard
+                </li>
+                <li class="sidebar-list-item"><span class="material-icons-outlined">inventory_2</span>   Products
+                </li>
+                <li class="sidebar-list-item"><span class="material-icons-outlined">inventory</span>   Inventory
+                </li>
+                <li class="sidebar-list-item"><span class="material-icons-outlined">add_shopping_cart</span>   Purchased Orders
+                </li>
+                <li class="sidebar-list-item"><span class="material-icons-outlined">shopping_cart</span>   Sales Orders
+                </li>
+                <li class="sidebar-list-item"><span class="material-icons-outlined">poll</span>   Reports
+                </li>
+                <li class="sidebar-list-item"><span class="material-icons-outlined">settings</span>   Settings
+                </li>
+                
+            </ul>
+        </aside>
+        <!-- End sidebar-->
+
+        <!-- main content-->
+        <div class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">Dashboard</p>
+            </div>
+            <div class="main-cards">
+                <div class="cards">
+                    <div class="card-inner">
+                        <p class="text-primary">Products  <span class="material-icons-outlined text-blue">inventory_2</span></p>
+                    </div>
+                    <spam class="text-primary font-weight-bold">249</spam>
+                </div>
+
+                <div class="cards">
+                    <div class="card-inner">
+                        <p class="text-primary">Purchased Orders  <span class="material-icons-outlined text-orange">add_shopping_cart</span></p>
+                    </div>
+                    <spam class="text-primary font-weight-bold">93</spam>
+                </div>
+
+                <div class="cards">
+                    <div class="card-inner">
+                        <p class="text-primary">Sales Orders  <span class="material-icons-outlined text-green">shopping_cart</span></p>
+                    </div>
+                    <spam class="text-primary font-weight-bold">50</spam>
+                </div>
+
+                <div class="cards">
+                    <div class="card-inner">
+                        <p class="text-primary">Products  <span class="material-icons-outlined text-red">notification_important</span></p>
+                    </div>
+                    <spam class="text-primary font-weight-bold">249</spam>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="charts-card">
+                    <p class="charts-title">Top 5 Products</p>
+                    <div id="bar-chart"></div>
+                </div>
+    
+                <div class="charts-card">
+                    <p class="charts-title">Purchased and Sales Orders</p>
+                    <div id="area-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End main content -->
+
+    <!-------Sripts-->
+    <!-------Apex chart library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
